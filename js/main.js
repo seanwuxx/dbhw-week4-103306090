@@ -1,4 +1,4 @@
-var API_PATH = "http://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch&q=id:ac589468-529b-4636-a9b2-ab57ae41cbcb";
+var API_PATH = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=3581a524-16a4-4605-b6b9-85e4f71a4a97";
 
 function getData(cb) {
   $.ajax({

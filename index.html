@@ -18,7 +18,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">學習型機構</a>
+          <a class="navbar-brand" href="#">來取暖</a>
         </div>
       </div>
     </nav>
@@ -29,7 +29,7 @@
       <div class="container">
         <br>
         <br>
-        <h1>學習型機構</h1>
+        <h1>愛心餐食</h1>
       </div>
     </div>
 
@@ -54,23 +54,24 @@
     </div> <!-- /container -->
 
   </body>
-  <script type="text/javascript">
+
+ <script type="text/javascript">
     $(document).ready(function() {
       getData(function(err, data) {
         if(err) {
           console.log(err);
         } else {
-          var animalList = data.result.results;
-          var HTMLanimalList = animalList.map(function(animal) {
+          var loveList = data.result.results;
+          var HTMLanimalList = loveList.map(function(love) {
 
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+animal.stitle+"</h2><img class='img-thumbnail' src='"+animal.ImageName+"'><p><ul class='list-group'>";
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+love.Name+"</h2><img class='img-thumbnail' src='"+love.ImageName+"'><p><ul class='list-group'>";
             var items = "";
-            for (var key in animal) {
+            for (var key in love) {
               if(key!="_id" && key!="ImageName") {
-                items=items+"<li class='list-group-item'>"+key+":"+animal[key]+"</li>";
+                items=items+"<li class='list-group-item'>"+key+":"+love[key]+"</li>";
               }
             }
-            var HTMLString = HTMLString+items+"</ul></p><div>";
+            HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
           HTMLanimalList.forEach(function(html) {
@@ -81,4 +82,5 @@
       });
     });
   </script>
+
 </html>
