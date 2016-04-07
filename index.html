@@ -63,7 +63,7 @@
           var animalList = data.result.results;
           var HTMLanimalList = animalList.map(function(animal) {
 
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+animal.Name+"</h2><img class='img-thumbnail' src='"+animal.ImageName+"'><p><ul class='list-group'>";
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+animal.stitle+"</h2><img class='img-thumbnail' src='"+animal.ImageName+"'><p><ul class='list-group'>";
             var items = "";
             for (var key in animal) {
               if(key!="_id" && key!="ImageName") {
